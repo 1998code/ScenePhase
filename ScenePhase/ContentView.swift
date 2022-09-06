@@ -8,14 +8,37 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @Environment(\.scenePhase) var scenePhase
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        ZStack {
+            VStack(spacing: 15) {
+                Image(systemName: "person.circle.fill")
+                    .imageScale(.large)
+                    .foregroundColor(.accentColor)
+                Text("Can you see me?")
+            }
+            .padding()
+            if scenePhase == .inactive {
+                inactive
+            }
         }
-        .padding()
+    }
+    
+    var inactive: some View {
+        VStack {
+            Spacer()
+            HStack {
+                Spacer()
+                Text("You cannot see me!")
+                    .bold()
+                    .font(.largeTitle)
+                    .foregroundColor(.accentColor)
+                Spacer()
+            }
+            Spacer()
+        }.background(.ultraThinMaterial)
     }
 }
 
