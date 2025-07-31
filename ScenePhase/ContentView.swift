@@ -13,17 +13,26 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            VStack(spacing: 15) {
-                Image(systemName: "person.circle.fill")
-                    .imageScale(.large)
-                    .foregroundColor(.accentColor)
-                Text("Can you see me?")
-            }
-            .padding()
+            background
+            active
             if scenePhase == .inactive {
-                inactive
+                if #available(iOS 26.0, *) {
+                    inactiveGlass
+                } else {
+                    inactive
+                }
             }
         }
+    }
+
+    var background: some View {
+        LinearGradient(colors: [.mint.opacity(0.55), .indigo.opacity(0.15)], startPoint: .top, endPoint: .bottomTrailing)
+            .ignoresSafeArea()
+    }
+    
+    var active: some View {
+        ShimmerText("Can you see me?")
+            .padding()
     }
     
     var inactive: some View {
@@ -31,19 +40,31 @@ struct ContentView: View {
             Spacer()
             HStack {
                 Spacer()
-                Text("You cannot see me!")
-                    .bold()
+                ShimmerText("You cannot see me!")
                     .font(.largeTitle)
-                    .foregroundColor(.accentColor)
                 Spacer()
             }
             Spacer()
         }.background(.ultraThinMaterial)
+        .ignoresSafeArea()
+    }
+    
+    @available(iOS 26.0, *)
+    var inactiveGlass: some View {
+        VStack {
+            Spacer()
+            HStack {
+                Spacer()
+                ShimmerText("You cannot see me!")
+                    .font(.largeTitle)
+                Spacer()
+            }
+            Spacer()
+        }.glassEffect(in: .rect)
+        .ignoresSafeArea()
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+#Preview {
+    ContentView()
 }

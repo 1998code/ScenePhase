@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A4422E22E3B8BB700395CA9 /* ShimmerText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4422E12E3B8BB700395CA9 /* ShimmerText.swift */; };
 		3A714E1128C70F96003AD7F2 /* ScenePhaseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A714E1028C70F96003AD7F2 /* ScenePhaseApp.swift */; };
 		3A714E1328C70F96003AD7F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A714E1228C70F96003AD7F2 /* ContentView.swift */; };
 		3A714E1528C70F97003AD7F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A714E1428C70F97003AD7F2 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A4422E12E3B8BB700395CA9 /* ShimmerText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerText.swift; sourceTree = "<group>"; };
 		3A714E0D28C70F96003AD7F2 /* ScenePhase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScenePhase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A714E1028C70F96003AD7F2 /* ScenePhaseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenePhaseApp.swift; sourceTree = "<group>"; };
 		3A714E1228C70F96003AD7F2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +34,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A4422E32E3B8BBB00395CA9 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				3A4422E12E3B8BB700395CA9 /* ShimmerText.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
 		3A714E0428C70F96003AD7F2 = {
 			isa = PBXGroup;
 			children = (
@@ -53,6 +63,7 @@
 			children = (
 				3A714E1028C70F96003AD7F2 /* ScenePhaseApp.swift */,
 				3A714E1228C70F96003AD7F2 /* ContentView.swift */,
+				3A4422E32E3B8BBB00395CA9 /* Styles */,
 				3A714E1428C70F97003AD7F2 /* Assets.xcassets */,
 				3A714E1628C70F97003AD7F2 /* Preview Content */,
 			);
@@ -139,6 +150,7 @@
 			files = (
 				3A714E1328C70F96003AD7F2 /* ContentView.swift in Sources */,
 				3A714E1128C70F96003AD7F2 /* ScenePhaseApp.swift in Sources */,
+				3A4422E22E3B8BB700395CA9 /* ShimmerText.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
